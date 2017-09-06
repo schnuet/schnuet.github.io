@@ -1,0 +1,108 @@
+html {
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 1.6em;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+article {
+    position: relative;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 3rem;
+    max-width: 40rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+p {
+    margin: 1rem 0;
+}
+p + p {
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 3rem;
+    line-height: 1.2em;
+}
+
+.constructionimage {
+    display: grid;
+    height: 6rem;
+    width: 6rem;
+    margin: 2rem auto;
+}
+.constructionimage > div {
+    opacity: 0;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+.constructionimage > div:nth-child(1) {
+    background-color: red;
+    animation-name: fromTop;
+    opacity: 1;
+}
+.constructionimage > div:nth-child(2) {
+    background-color: orangered;
+    animation-name: fromLeft;
+    opacity: 1;
+}
+.constructionimage > div:nth-child(3) {
+    background-color: orange;
+    animation-name: fromRight;
+    opacity: 1;
+}
+.constructionimage > div:nth-child(4) {
+    background-color: yellow;
+    animation-name: fromBottom;
+    opacity: 1;
+}
+
+@keyframes fromTop {
+    0%, 15% {
+        transform: translate3d(0, -3rem, 0);
+        opacity: 0;
+    }
+    85%, 100% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+@keyframes fromLeft {
+    0%, 15% {
+        transform: translate3d(-3rem, 0, 0);
+        opacity: 0;
+    }
+    85%, 100% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+@keyframes fromRight {
+    0%, 15% {
+        transform: translate3d(3rem, 0, 0);
+        opacity: 0;
+    }
+    85%, 100% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+@keyframes fromBottom {
+    0%, 15% {
+        transform: translate3d(0, 3rem, 0);
+        opacity: 0;
+    }
+    85%, 100% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
